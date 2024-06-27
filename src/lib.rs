@@ -1,9 +1,5 @@
 use std::io;
 
-#[cfg(target_os = "linux")]
-use linux as platform;
-#[cfg(target_os = "macos")]
-use macos as platform;
 #[cfg(target_os = "windows")]
 use windows as platform;
 
@@ -11,7 +7,13 @@ use windows as platform;
 pub(crate) mod windows;
 
 #[cfg(target_os = "macos")]
+use macos as platform;
+
+#[cfg(target_os = "macos")]
 pub(crate) mod macos;
+
+#[cfg(target_os = "linux")]
+use linux as platform;
 
 #[cfg(target_os = "linux")]
 pub(crate) mod linux;
