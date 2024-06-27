@@ -2,13 +2,15 @@
 name = "chrome_extension_installer"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+description = "A library for installing Chrome extensions for the user."
+repository = "https://github.com/Revxrsal/chrome_extension_installer"
+categories = ["web-programming"]
+keywords = ["extension", "chrome-extensions", "extension-installer"]
+readme = "README.md"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[lib]
-name = "app_lib"
-crate-type = ["staticlib", "cdylib", "rlib"]
-
-[dependencies]
-winreg = "0.52.0"
+[target.'cfg(any(target_os = "macos", target_os = "linux"))'.dependencies]
 dirs = "5.0.1"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+winreg = "0.52.0"
