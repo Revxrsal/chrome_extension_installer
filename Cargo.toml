@@ -1,0 +1,14 @@
+[package]
+name = "chrome_extension_installer"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "app_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[dependencies]
+winreg = "0.52.0"
+dirs = "5.0.1"
